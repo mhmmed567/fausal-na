@@ -1,0 +1,52 @@
+{
+  "name": "nahdha-crm",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "main": "server.js",
+  "description": "Al Nahdha Hospital / Pharmacy CRM",
+  "scripts": {
+    "dev": "concurrently -n web,mcp -c cyan,magenta \"vite\" \"tsx watch server/index.ts\"",
+    "dev:web": "vite",
+    "dev:mcp": "tsx watch server/index.ts",
+    "build": "tsc -p tsconfig.app.json --noEmit && tsc -p tsconfig.node.json --noEmit && tsc -p tsconfig.server.json && vite build",
+    "start": "node server.js",
+    "preview": "vite preview",
+    "typecheck": "tsc -p tsconfig.app.json --noEmit && tsc -p tsconfig.node.json --noEmit",
+    "mcp": "tsx server/index.ts",
+    "test:mcp:workflows": "tsx scripts/test-mcp-workflows.ts",
+    "test:mcp": "tsx scripts/test-mcp.ts",
+    "test:crm": "tsx scripts/test-crm.ts",
+    "test": "tsx scripts/test-crm.ts && tsx scripts/test-mcp.ts"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@fastify/static": "^10.1.4",
+    "@heroui/react": "^3.2.5",
+    "@heroui/styles": "^3.2.5",
+    "@modelcontextprotocol/sdk": "^1.30.0",
+    "@supabase/supabase-js": "^2.116.0",
+    "fastify": "^5.12.5",
+    "lucide-react": "^1.46.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "react-router-dom": "^7.18.4",
+    "tsx": "^4.23.15",
+    "ws": "^8.21.3",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.1.13",
+    "@types/node": "^22.20.3",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@types/ws": "^8.18.1",
+    "@vitejs/plugin-react": "^4.7.0",
+    "concurrently": "^10.0.5",
+    "tailwindcss": "^4.1.13",
+    "typescript": "^7.0.2",
+    "vite": "^6.3.6"
+  }
+}

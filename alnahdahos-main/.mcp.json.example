@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "nahdha-crm": {
+      "url": "http://localhost:4010/mcp",
+      "headers": {
+        "Authorization": "Bearer ndh_live_492cd188e6ada39ed206e8e6b87e2433a6315cd2f8f339dc"
+      }
+    }
+  }
+}
